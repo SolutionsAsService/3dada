@@ -8,7 +8,7 @@ root = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(root / "scripts"))
 import check_mermaid  # noqa: E402
 
-# Tool names the Unified CAD MCP exposes at the pinned revision (unified-CAD-MCP 1ee34b1;
+# Tool names the Unified CAD MCP exposes at the pinned revision (unified-CAD-MCP 1ee34b1 + e8856bc (drone_rf_antenna_layout_check);
 # src/unified_cad_mcp/coverage.json plus the in-process airframe_* tools). A name the skill
 # cites that is not here is an invented tool, which the contract forbids.
 KNOWN_TOOLS = {
@@ -27,6 +27,7 @@ KNOWN_TOOLS = {
         export_stl export_step get_objects get_shape_info""".split()),
     *("airframe_" + n for n in "build_fixed_wing inspect_step render_preview aero_crosscheck vspaero_analysis".split()),
     "kicad_export", "kicad_design", "kicad_get_usage_guidance",
+    "drone_rf_antenna_layout_check",  # unified-CAD-MCP e8856bc
 }
 TOOL_NAME = re.compile(r"\b(?:unified|cad|freecad|airframe|kicad|pcb|drone)_[a-z_]*[a-z]\b(?!\.py)")
 NOT_TOOLS = {"unified_cad_mcp", "drone_tools"}  # package and config key, not tools
