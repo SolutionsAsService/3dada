@@ -1,0 +1,5 @@
+{
+ "format": "unified-cad-mcp/stl-meta@1",
+ "source": "build.py",
+ "units": "mm"
+}

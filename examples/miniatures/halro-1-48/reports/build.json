@@ -1,0 +1,46 @@
+{
+ "freecad": "1.1.3",
+ "airframe": {
+  "triangles": 18678,
+  "volume_mm3": 895.95,
+  "solids": 1,
+  "bbox_mm": [
+   37.86,
+   75.0,
+   14.22
+  ],
+  "mesh_closed": true
+ },
+ "stand": {
+  "triangles": 652,
+  "volume_mm3": 306.67,
+  "solids": 1,
+  "bbox_mm": [
+   3.5,
+   3.49,
+   35.5
+  ],
+  "mesh_closed": true
+ },
+ "base": {
+  "triangles": 4122,
+  "volume_mm3": 5028.82,
+  "solids": 1,
+  "bbox_mm": [
+   39.98,
+   39.98,
+   7.0
+  ],
+  "mesh_closed": true
+ },
+ "assembly": {
+  "airframe_belly_z_mm": -3.194,
+  "overall_height_mm": 49.95,
+  "span_mm": 75.0,
+  "length_mm": 37.86,
+  "interference_mm3": {
+   "stand/airframe": 0.0,
+   "stand/base": 0.0
+  }
+ }
+}
