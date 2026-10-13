@@ -44,6 +44,11 @@ in a real run (HALRO 2.3, 2026-10-13) and says what to check, not what to believ
   (`airframe_inspect_step` reports `brep_closed` vs `mesh_closed`). Overlap it into the wall by ≥ 0.5 mm.
 - Catalog dimensions are planning data: ship a "measure the purchased part + print a fit coupon" gate with the files.
 
+## Revisions of an existing product
+- Read the original vision (requirements, concept brief, first mechanical interface, reference renders) before choosing parts; pick
+  modules that fit the original body rather than growing the body around a convenient dev board (Autheo wallet 1.0 → 1.1).
+- Size every printed button cap with `enclosure_button_stack` (preload gap, flange clearance at full press, click before bottom-out).
+
 ## Process
 - Panel: one sub-agent per literary reference when a sub-agent tool exists. A single model writing critics in turn is
   "not independent" and must be recorded as a compliance gap, not hidden.
