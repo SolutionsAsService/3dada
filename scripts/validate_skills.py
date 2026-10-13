@@ -28,6 +28,7 @@ KNOWN_TOOLS = {
     *("airframe_" + n for n in "build_fixed_wing inspect_step render_preview aero_crosscheck vspaero_analysis".split()),
     "kicad_export", "kicad_design", "kicad_get_usage_guidance",
     "drone_rf_antenna_layout_check",  # unified-CAD-MCP e8856bc
+    "enclosure_module_catalog", "enclosure_fit_check",
 }
 TOOL_NAME = re.compile(r"\b(?:unified|cad|freecad|airframe|kicad|pcb|drone)_[a-z_]*[a-z]\b(?!\.py)")
 NOT_TOOLS = {"unified_cad_mcp", "drone_tools"}  # package and config key, not tools

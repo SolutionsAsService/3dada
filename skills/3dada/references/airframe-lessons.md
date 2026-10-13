@@ -36,6 +36,14 @@ in a real run (HALRO 2.3, 2026-10-13) and says what to check, not what to believ
   "up" follows from it. (ATN-01 v1.1 failed 5 rules with flat stubs in the screen plane.)
 - Covers over antennas must be RF-transparent (no metal-flake paint, no metal inserts over the patch).
 
+## Printed enclosures around off-the-shelf modules
+- Start from `enclosure_module_catalog` envelopes (with their confidence) and run `enclosure_fit_check` before modelling: per-side clearance,
+  cell separation and swelling, antenna metal keep-outs vs screws/inserts, wall thickness. Then confirm with a solid interference check.
+- Every printed part must be one solid; fail the build if a boolean leaves pieces or slivers.
+- Never make a boss or rib exactly tangent to a wall: the shared edge becomes non-manifold and the STEP tessellation is not watertight
+  (`airframe_inspect_step` reports `brep_closed` vs `mesh_closed`). Overlap it into the wall by ≥ 0.5 mm.
+- Catalog dimensions are planning data: ship a "measure the purchased part + print a fit coupon" gate with the files.
+
 ## Process
 - Panel: one sub-agent per literary reference when a sub-agent tool exists. A single model writing critics in turn is
   "not independent" and must be recorded as a compliance gap, not hidden.
