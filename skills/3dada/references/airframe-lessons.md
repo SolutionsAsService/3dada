@@ -30,6 +30,12 @@ in a real run (HALRO 2.3, 2026-10-13) and says what to check, not what to believ
 - Swept wings: pass the VLM neutral point back as `neutral_point_crosscheck`; the closed form must agree within 5 % MAC and
   the margin must also hold with the VLM point.
 
+## RF devices (trackers, nodes, gateways)
+- Run `drone_rf_antenna_layout_check` before styling: whips vertical relative to the mounted orientation, ≥ 0.5 λ/4 at the lowest band,
+  main/diversity ≥ 0.25 λ apart, GNSS patch boresight to the sky and ≥ 40 mm from transmitters. Decide which face mounts to the vehicle first;
+  "up" follows from it. (ATN-01 v1.1 failed 5 rules with flat stubs in the screen plane.)
+- Covers over antennas must be RF-transparent (no metal-flake paint, no metal inserts over the patch).
+
 ## Process
 - Panel: one sub-agent per literary reference when a sub-agent tool exists. A single model writing critics in turn is
   "not independent" and must be recorded as a compliance gap, not hidden.
