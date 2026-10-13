@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "unified-cad": {
+      "command": "/mnt/d/ai-stack/repos/unified-CAD-MCP/.venv/bin/unified-cad-mcp",
+      "args": [
+        "--config",
+        "/mnt/d/ai-stack/repos/unified-CAD-MCP/unified-cad.local.json"
+      ]
+    }
+  }
+}

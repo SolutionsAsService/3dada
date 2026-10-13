@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "project_root": "/mnt/d/ai-stack/cad-projects/3dada",
+  "drone_tools": false,
+  "backends": {
+    "kicad": {
+      "command": "/mnt/d/ai-stack/repos/unified-CAD-MCP/.backends/kicad/bin/python",
+      "args": [
+        "-m",
+        "kicad_mcp.server"
+      ],
+      "cwd": "/mnt/d/ai-stack/cad-projects/3dada",
+      "env": {
+        "KICAD_MCP_NO_TELEMETRY": "1"
+      },
+      "timeout_seconds": 120
+    },
+    "cad": {
+      "command": "/mnt/d/ai-stack/repos/unified-CAD-MCP/.backends/cad/bin/python",
+      "args": [
+        "-m",
+        "design_mcp.server"
+      ],
+      "cwd": "/mnt/d/ai-stack/cad-projects/3dada",
+      "env": {
+        "DESIGN_MCP_ASSET_ROOT": "/mnt/d/ai-stack/cad-projects/3dada/assets",
+        "DESIGN_MCP_REVISION_ROOT": "/mnt/d/ai-stack/cad-projects/3dada/revisions",
+        "DESIGN_MCP_PREVIEW_ROOT": "/mnt/d/ai-stack/cad-projects/3dada/previews"
+      },
+      "timeout_seconds": 120
+    },
+    "pcb": {
+      "command": "/mnt/d/ai-stack/repos/unified-CAD-MCP/.backends/pcb/bin/python",
+      "args": [
+        "/mnt/d/ai-stack/repos/unified-CAD-MCP/src/unified_cad_mcp/pcb_adapter.py"
+      ],
+      "cwd": "/mnt/d/ai-stack/cad-projects/3dada",
+      "env": {
+        "KICAD_MCP_ENABLE_SCHEMATIC": "0"
+      },
+      "timeout_seconds": 120
+    },
+    "freecad": {
+      "enabled": false,
+      "command": "/mnt/d/ai-stack/repos/unified-CAD-MCP/.backends/freecad/bin/python",
+      "args": [
+        "/mnt/d/ai-stack/repos/unified-CAD-MCP/src/unified_cad_mcp/freecad_adapter.py"
+      ],
+      "cwd": "/mnt/d/ai-stack/cad-projects/3dada",
+      "env": {
+        "UNIFIED_FREECAD_SOURCE": "/mnt/d/ai-stack/repos/unified-CAD-MCP/.backends/freecad/source",
+        "UNIFIED_FREECAD_EXPERIMENTAL": "0"
+      },
+      "timeout_seconds": 120
+    }
+  }
+}

@@ -1,10 +1,14 @@
 # Traversal ledger
 
+> Inherited from DADA. The verdicts below were reached on DADA's 2D web artifact; they are kept as the record of that run, not as judgments about any 3D model.
+
 Every node of `anchor-graph.md` with its verdict from the run that judged it. A node is either judged here, or it was visited in an earlier run and recorded in `DESIGN-LOG.md`, which is not published; those rows say so.
 
-Verdicts: **APPLY-SITE** (change to `web/`), **APPLY-SKILL** (packaging), **KEEP** (already met, where named), **DECLINE** (does not bear on the artifact, one-line reason), **DEFERRED** (a change proposed and not applied yet, with the reason), **PASS**/**OBJECT** (panel seat, one authority each), **IN-LOG** (visited in an earlier run, not re-judged here).
+Verdicts: **APPLY-SITE** (change to `web/`), **APPLY-SKILL** (packaging), **KEEP** (already met, where named), **DECLINE** (does not bear on the artifact, one-line reason), **DEFERRED** (a change proposed and not applied yet, with the reason), **PASS**/**OBJECT** (panel seat, one authority each), **IN-LOG** (visited in an earlier run, not re-judged here). **NOT-YET-JUDGED** (added by 3dada; no traversal has judged it).
 
-Counts: 302 nodes, 302 judged in this run, 0 visited in an earlier run and not re-judged.
+Counts: 400 nodes. The 302 inherited from DADA were all judged in DADA's last run (a traversal of its graphic-design web page, recorded below as it was), 0 visited in an earlier run and not re-judged. The 98 nodes 3dada added for 3D (form, solid CAD, mesh, render, body, making, exchange, CAD MCP instruments and 20 critic seats) are judged 0 of 98: their verdict reads NOT-YET-JUDGED until a 3dada traversal judges them.
+
+Line numbers are addresses in `anchor-graph.md` as it stands in this repository; they were rebuilt from the graph after the 3D insertion, not renumbered by hand. Reasons that cite `index.html` or `style.css` lines refer to the inherited DADA page in `web/`.
 
 | Line | Node | Class | Verdict | Reason |
 |---:|---|---|---|---|
@@ -272,44 +276,142 @@ Counts: 302 nodes, 302 judged in this run, 0 visited in an earlier run and not r
 | 285 | `crit_detach_sontag` | critic | OBJECT | three-line paragraph restates the letterforms in prose |
 | 286 | `crit_erasure_miller` | critic | OBJECT | no designer, studio or work credited above the fold |
 | 287 | `crit_erasure_walters` | critic | OBJECT | invited critics named nowhere; no seat strip on the page |
-| 290 | `greenberg` | lens | DECLINE | no formalist critic or Greenberg figure printed |
-| 291 | `eco` | lens | DECLINE | lens text read by a seat not printed on the page |
-| 292 | `papanek` | lens | DECLINE | beneficiary questions belong to critics in fixed SKILL.md |
-| 293 | `positioning` | lens | DECLINE | Ries and Trout checks; no printed distinctiveness test |
-| 294 | `sharp` | lens | KEEP | one recurring distinctive asset: the asterisk wordmark in masthead and footer |
-| 295 | `sennett` | lens | DECLINE | process doctrine; no seat among the 16 shown |
-| 296 | `mcdonough` | lens | DECLINE | no material claim on the page; no eco seat printed |
-| 297 | `escobar` | lens | KEEP | seated against Tanizaki and paired with Samara (lines 37-38) |
-| 298 | `tanizaki` | lens | KEEP | seated as Cross-Cultural critic (line 38) and in the source list (line 33) |
-| 299 | `debord` | lens | DECLINE | no spectacle claim printed; no seat among the 16 shown |
-| 300 | `walters` | lens | KEEP | seated under ERASURE with its line-300 link (line 38) |
-| 301 | `cairoLie` | lens | DECLINE | numbers are text; no encoding that could mislead |
-| 302 | `millerCD` | lens | KEEP | seated as Erasure critic (line 38) and in the critic row (line 32) |
-| 305 | `surowiecki` | panel | KEEP | independent judgments: 16 printed seats each argue from their own text |
-| 306 | `page` | panel | KEEP | four opposed pairs printed as the seat-art block (line 38) |
-| 307 | `debono` | panel | DECLINE | convening method is a SKILL.md concern |
-| 308 | `lerman` | panel | DECLINE | critic feedback process; no page element changes |
-| 311 | `popper` | adapt | KEEP | changed decision re-opens dependents (line 31) |
-| 312 | `kuhn` | adapt | DECLINE | no paradigm claim on the page |
-| 313 | `argyris` | adapt | DECLINE | double-loop revision is a fixed run-time rule; criterion stated in artifact 01 |
-| 314 | `leanries` | adapt | DECLINE | no iteration-loop claim printed |
-| 315 | `taleb` | adapt | KEEP | critique invitation stated in hero description |
-| 316 | `meadows` | adapt | DECLINE | leverage edge runs to double-loop learning in SKILL.md |
-| 319 | `kant` | autonomy | DECLINE | no Kant seat or judgment on the page |
-| 320 | `burke` | autonomy | DECLINE | sublime doctrine bears on no printed claim; no seat among the 16 shown |
-| 321 | `gautier` | autonomy | DECLINE | no page element or packaging artifact named |
-| 322 | `wilde` | autonomy | KEEP | Autonomous stated (index.html:30), the mode Wilde's preface defends |
-| 323 | `waltpater` | autonomy | DECLINE | no Autonomous-mode claim printed beyond line 30; seating moves printed figures |
-| 324 | `bell` | autonomy | KEEP | Autonomous mode stated (index.html:30) |
-| 325 | `fry` | autonomy | DECLINE | no Fry claim or seat-level element on the page (run-R0 seat is separate) |
-| 326 | `hanslick` | autonomy | DECLINE | node is not printed on the page; seating it moves the printed equity figures |
-| 327 | `wolfflin` | autonomy | KEEP | seated in the Apollonian pair (line 38) |
-| 328 | `ortega` | autonomy | DEFERRED | cutting the legend to two lines would drop printed counts the record depends on; not applied |
-| 329 | `malevich` | autonomy | DECLINE | no non-objective text cited on the page |
-| 330 | `mondrian` | autonomy | DECLINE | pure-plastic test belongs to a seat not printed on the page |
-| 331 | `nietzsche` | autonomy | KEEP | seated under DIONYSIAN EXCESS with its line-331 link (line 38) |
-| 332 | `gombrich` | autonomy | KEEP | seated under APOLLONIAN ORDER with its line-332 link (line 38) |
-| 333 | `poetics` | autonomy | DECLINE | not seated on the page; no printed claim it tests |
+| 288 | `crit_good_rams` | critic | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 289 | `crit_good_norman` | critic | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 290 | `crit_living_alexander` | critic | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 291 | `crit_mass_corbusier` | critic | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 292 | `crit_vision_moholy` | critic | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 293 | `crit_essence_brancusi` | critic | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 294 | `crit_relief_hildebrand` | critic | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 295 | `crit_field_krauss` | critic | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 296 | `crit_haptic_pallasmaa` | critic | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 297 | `crit_make_boothroyd` | critic | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 298 | `crit_make_dewhurst` | critic | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 299 | `crit_matter_ashby` | critic | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 300 | `crit_work_pye` | critic | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 301 | `crit_surf_piegl` | critic | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 302 | `crit_surf_tiller` | critic | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 303 | `crit_mesh_botsch` | critic | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 304 | `crit_light_pharr` | critic | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 305 | `crit_story_catmull` | critic | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 306 | `crit_body_dreyfuss` | critic | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 307 | `crit_body_criado` | critic | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 310 | `greenberg` | lens | DECLINE | no formalist critic or Greenberg figure printed |
+| 311 | `eco` | lens | DECLINE | lens text read by a seat not printed on the page |
+| 312 | `papanek` | lens | DECLINE | beneficiary questions belong to critics in fixed SKILL.md |
+| 313 | `positioning` | lens | DECLINE | Ries and Trout checks; no printed distinctiveness test |
+| 314 | `sharp` | lens | KEEP | one recurring distinctive asset: the asterisk wordmark in masthead and footer |
+| 315 | `sennett` | lens | DECLINE | process doctrine; no seat among the 16 shown |
+| 316 | `mcdonough` | lens | DECLINE | no material claim on the page; no eco seat printed |
+| 317 | `escobar` | lens | KEEP | seated against Tanizaki and paired with Samara (lines 37-38) |
+| 318 | `tanizaki` | lens | KEEP | seated as Cross-Cultural critic (line 38) and in the source list (line 33) |
+| 319 | `debord` | lens | DECLINE | no spectacle claim printed; no seat among the 16 shown |
+| 320 | `walters` | lens | KEEP | seated under ERASURE with its line-300 link (line 38) |
+| 321 | `cairoLie` | lens | DECLINE | numbers are text; no encoding that could mislead |
+| 322 | `millerCD` | lens | KEEP | seated as Erasure critic (line 38) and in the critic row (line 32) |
+| 325 | `surowiecki` | panel | KEEP | independent judgments: 16 printed seats each argue from their own text |
+| 326 | `page` | panel | KEEP | four opposed pairs printed as the seat-art block (line 38) |
+| 327 | `debono` | panel | DECLINE | convening method is a SKILL.md concern |
+| 328 | `lerman` | panel | DECLINE | critic feedback process; no page element changes |
+| 331 | `popper` | adapt | KEEP | changed decision re-opens dependents (line 31) |
+| 332 | `kuhn` | adapt | DECLINE | no paradigm claim on the page |
+| 333 | `argyris` | adapt | DECLINE | double-loop revision is a fixed run-time rule; criterion stated in artifact 01 |
+| 334 | `leanries` | adapt | DECLINE | no iteration-loop claim printed |
+| 335 | `taleb` | adapt | KEEP | critique invitation stated in hero description |
+| 336 | `meadows` | adapt | DECLINE | leverage edge runs to double-loop learning in SKILL.md |
+| 339 | `kant` | autonomy | DECLINE | no Kant seat or judgment on the page |
+| 340 | `burke` | autonomy | DECLINE | sublime doctrine bears on no printed claim; no seat among the 16 shown |
+| 341 | `gautier` | autonomy | DECLINE | no page element or packaging artifact named |
+| 342 | `wilde` | autonomy | KEEP | Autonomous stated (index.html:30), the mode Wilde's preface defends |
+| 343 | `waltpater` | autonomy | DECLINE | no Autonomous-mode claim printed beyond line 30; seating moves printed figures |
+| 344 | `bell` | autonomy | KEEP | Autonomous mode stated (index.html:30) |
+| 345 | `fry` | autonomy | DECLINE | no Fry claim or seat-level element on the page (run-R0 seat is separate) |
+| 346 | `hanslick` | autonomy | DECLINE | node is not printed on the page; seating it moves the printed equity figures |
+| 347 | `wolfflin` | autonomy | KEEP | seated in the Apollonian pair (line 38) |
+| 348 | `ortega` | autonomy | DEFERRED | cutting the legend to two lines would drop printed counts the record depends on; not applied |
+| 349 | `malevich` | autonomy | DECLINE | no non-objective text cited on the page |
+| 350 | `mondrian` | autonomy | DECLINE | pure-plastic test belongs to a seat not printed on the page |
+| 351 | `nietzsche` | autonomy | KEEP | seated under DIONYSIAN EXCESS with its line-331 link (line 38) |
+| 352 | `gombrich` | autonomy | KEEP | seated under APOLLONIAN ORDER with its line-332 link (line 38) |
+| 353 | `poetics` | autonomy | DECLINE | not seated on the page; no printed claim it tests |
+| 356 | `lecorbusier` | form | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 357 | `modulor` | form | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 358 | `moholyNV` | form | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 359 | `moholyVM` | form | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 360 | `brancusi` | form | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 361 | `hildebrand` | form | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 362 | `readSculpt` | form | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 363 | `krauss` | form | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 364 | `kraussField` | form | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 365 | `judd` | form | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 366 | `ching` | form | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 367 | `rasmussen` | form | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 368 | `pallasmaa` | form | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 369 | `zumthor` | form | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 370 | `darcy` | form | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 371 | `alexOrder` | form | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 374 | `piegl` | solid | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 375 | `farin` | solid | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 376 | `mortenson` | solid | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 377 | `requicha` | solid | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 378 | `mantyla` | solid | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 379 | `hoffmann` | solid | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 380 | `shah` | solid | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 381 | `woodbury` | solid | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 382 | `tedeschi` | solid | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 383 | `rhinoGuide` | solid | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 386 | `botsch` | mesh | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 387 | `catmullClark` | mesh | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 388 | `vaughan` | mesh | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 389 | `qem` | mesh | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 390 | `marching` | mesh | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 391 | `edelsbrunner` | mesh | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 392 | `shewchuk` | mesh | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 395 | `kajiya` | render | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 396 | `cookTorrance` | render | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 397 | `burley` | render | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 398 | `pharr` | render | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 399 | `birn` | render | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 400 | `gurney` | render | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 401 | `catmullCI` | render | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 402 | `illusion` | render | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 405 | `dreyfussDFP` | human | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 406 | `measureMan` | human | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 407 | `panero` | human | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 408 | `pheasant` | human | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 409 | `neufert` | human | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 410 | `criadoPerez` | human | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 413 | `dfma` | make | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 414 | `ashby` | make | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 415 | `ashbyJ` | make | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 416 | `thompsonR` | make | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 417 | `lefteri` | make | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 418 | `gibson` | make | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 419 | `redwood` | make | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 420 | `dfam` | make | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 421 | `asme` | make | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 422 | `iso2768` | make | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 423 | `pye` | make | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 426 | `stepFmt` | exchange | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 427 | `stlFmt` | exchange | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 428 | `gltfFmt` | exchange | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 429 | `objFmt` | exchange | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 430 | `threemfFmt` | exchange | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 431 | `usdFmt` | exchange | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 434 | `u_ctx` | instrument | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 435 | `u_scope` | instrument | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 436 | `u_assets` | instrument | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 437 | `u_stl` | instrument | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 438 | `u_brep` | instrument | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 439 | `u_dist` | instrument | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 440 | `u_rev` | instrument | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 441 | `u_prev` | instrument | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 442 | `u_rec` | instrument | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 443 | `u_qty` | instrument | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 444 | `u_fc` | instrument | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 445 | `u_fcx` | instrument | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 446 | `u_air` | instrument | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
+| 447 | `u_kicad` | instrument | NOT-YET-JUDGED | 3D node added by 3dada; awaits the first 3dada traversal |
 
 ## WHOLE round R2 (required critics, final state of the hero copy)
 

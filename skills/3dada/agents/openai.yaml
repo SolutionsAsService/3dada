@@ -1,0 +1,4 @@
+interface:
+  display_name: "3DADA: Directed Ambition 3D Design Agent"
+  short_description: "Ambitious 3D models, measured with the Unified CAD MCP"
+  default_prompt: "Use $3dada to design an ambitious 3D model in Autonomous or Adaptive mode, measure every move through the Unified CAD MCP, and document its traversal plan, frontier, decisions, panel reports, anchor ledger, and compliance check."

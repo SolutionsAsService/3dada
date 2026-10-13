@@ -1,8 +1,6 @@
 name: Publish GitHub Pages
+# web/ is still DADA's 2D page. Publishing is manual until a 3dada traversal produces a 3D page.
 on:
-  push:
-    branches: [main]
-    paths: ['web/**', '.github/workflows/pages.yml']
   workflow_dispatch:
 permissions:
   contents: read

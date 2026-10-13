@@ -12,4 +12,38 @@ jobs:
       - uses: actions/checkout@v4
       - run: python3 -m pip install PyYAML==6.0.2
       - run: python3 scripts/validate_skills.py
+      - run: python3 -m unittest discover -s tests -v
       - run: git diff --check
+  mermaid:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Render every mermaid block with mermaid-cli and check it rendered every node
+        run: |
+          # The graph has more than mermaid's default maxEdges (500). Without this config
+          # mmdc exits 0 and writes an error diagram, so the node count is asserted below.
+          echo '{"maxEdges": 5000, "maxTextSize": 2000000}' > mmdc-config.json
+          echo '{"args":["--no-sandbox"]}' > pptr.json
+          python3 - <<'EOF'
+          import json, pathlib, re, subprocess, sys
+          sys.path.insert(0, "scripts")
+          import check_mermaid
+          fence = chr(96) * 3
+          n = 0
+          for md in sorted(pathlib.Path("skills").rglob("*.md")):
+              for block in re.findall(fence + r"mermaid\n(.*?)" + fence, md.read_text(encoding="utf-8"), re.S):
+                  n += 1
+                  src = pathlib.Path(f"block{n}.mmd")
+                  src.write_text(block, encoding="utf-8")
+                  subprocess.run(["npx", "-y", "-p", "@mermaid-js/mermaid-cli", "mmdc", "-c", "mmdc-config.json",
+                                  "-p", "pptr.json", "-i", str(src), "-o", f"{src}.svg"], check=True)
+                  svg = pathlib.Path(f"{src}.svg").read_text(encoding="utf-8")
+                  rendered = len(re.findall(r'class="node default', svg))
+                  expected = check_mermaid.check_block(block.rstrip("\n"), md.name)[1]["nodes"]
+                  print(md, "rendered", rendered, "of", expected, "nodes")
+                  assert rendered == expected, (md, rendered, expected)
+          assert n, "no mermaid blocks"
+          EOF

@@ -285,6 +285,26 @@ flowchart LR
     crit_detach_sontag["Critic: Detachment (Sontag)"]:::critic
     crit_erasure_miller["Critic: Erasure (Cheryl D. Miller)"]:::critic
     crit_erasure_walters["Critic: Erasure (Kelly Walters)"]:::critic
+    crit_good_rams["Critic: Good Design (Rams)"]:::critic
+    crit_good_norman["Critic: Good Design (Norman)"]:::critic
+    crit_living_alexander["Critic: Living Structure (Alexander)"]:::critic
+    crit_mass_corbusier["Critic: Plan and Mass (Le Corbusier)"]:::critic
+    crit_vision_moholy["Critic: Material to Space (Moholy-Nagy)"]:::critic
+    crit_essence_brancusi["Critic: Essential Form (Brancusi)"]:::critic
+    crit_relief_hildebrand["Critic: Relief and Volume (Hildebrand)"]:::critic
+    crit_field_krauss["Critic: Expanded Field (Krauss)"]:::critic
+    crit_haptic_pallasmaa["Critic: Haptic Space (Pallasmaa)"]:::critic
+    crit_make_boothroyd["Critic: Manufacturability (Boothroyd)"]:::critic
+    crit_make_dewhurst["Critic: Manufacturability (Dewhurst)"]:::critic
+    crit_matter_ashby["Critic: Material Selection (Ashby)"]:::critic
+    crit_work_pye["Critic: Workmanship (Pye)"]:::critic
+    crit_surf_piegl["Critic: Surface Continuity (Piegl)"]:::critic
+    crit_surf_tiller["Critic: Surface Continuity (Tiller)"]:::critic
+    crit_mesh_botsch["Critic: Mesh Quality (Botsch)"]:::critic
+    crit_light_pharr["Critic: Light Transport (Pharr)"]:::critic
+    crit_story_catmull["Critic: Render and Candor (Catmull)"]:::critic
+    crit_body_dreyfuss["Critic: Human Scale (Dreyfuss)"]:::critic
+    crit_body_criado["Critic: Data Gap (Criado Perez)"]:::critic
   end
   subgraph LENSES["Lenses: Each Critic's Own Literature"]
     greenberg["Art and Culture (Clement Greenberg)"]:::lens
@@ -331,6 +351,100 @@ flowchart LR
     nietzsche["The Birth of Tragedy (Friedrich Nietzsche)"]:::autonomy
     gombrich["The Sense of Order (E. H. Gombrich)"]:::autonomy
     poetics["Poetics (Aristotle)"]:::autonomy
+  end
+  subgraph FORM3D["Form: Mass, Volume, Space"]
+    lecorbusier["Towards a New Architecture (Le Corbusier)"]:::form
+    modulor["The Modulor (Le Corbusier)"]:::form
+    moholyNV["The New Vision: From Material to Architecture (László Moholy-Nagy)"]:::form
+    moholyVM["Vision in Motion (László Moholy-Nagy)"]:::form
+    brancusi["Brancusi: The Sculpture and Drawings (Sidney Geist)"]:::form
+    hildebrand["The Problem of Form in Painting and Sculpture (Adolf von Hildebrand)"]:::form
+    readSculpt["The Art of Sculpture (Herbert Read)"]:::form
+    krauss["Passages in Modern Sculpture (Rosalind Krauss)"]:::form
+    kraussField["Sculpture in the Expanded Field (Rosalind Krauss)"]:::form
+    judd["Specific Objects (Donald Judd)"]:::form
+    ching["Architecture: Form, Space, and Order (Francis D. K. Ching)"]:::form
+    rasmussen["Experiencing Architecture (Steen Eiler Rasmussen)"]:::form
+    pallasmaa["The Eyes of the Skin (Juhani Pallasmaa)"]:::form
+    zumthor["Atmospheres (Peter Zumthor)"]:::form
+    darcy["On Growth and Form (D'Arcy Wentworth Thompson)"]:::form
+    alexOrder["The Nature of Order (Christopher Alexander)"]:::form
+  end
+  subgraph SOLID["Parametric and Solid CAD: Constraints, Feature Trees, B-rep, NURBS"]
+    piegl["The NURBS Book (Les Piegl, Wayne Tiller)"]:::solid
+    farin["Curves and Surfaces for CAGD (Gerald Farin)"]:::solid
+    mortenson["Geometric Modeling (Michael E. Mortenson)"]:::solid
+    requicha["Representations for Rigid Solids (Aristides Requicha)"]:::solid
+    mantyla["An Introduction to Solid Modeling (Martti Mäntylä)"]:::solid
+    hoffmann["Geometric and Solid Modeling (Christoph M. Hoffmann)"]:::solid
+    shah["Parametric and Feature-Based CAD/CAM (Jami Shah, Martti Mäntylä)"]:::solid
+    woodbury["Elements of Parametric Design (Robert Woodbury)"]:::solid
+    tedeschi["AAD Algorithms-Aided Design (Arturo Tedeschi)"]:::solid
+    rhinoGuide["Rhino Level 1 and Level 2 Training Guides (Robert McNeel and Associates)"]:::solid
+  end
+  subgraph MESH["Topology and Mesh Quality"]
+    botsch["Polygon Mesh Processing (Botsch, Kobbelt, Pauly, Alliez, Lévy)"]:::mesh
+    catmullClark["Recursively Generated B-Spline Surfaces on Arbitrary Topological Meshes (Edwin Catmull, Jim Clark)"]:::mesh
+    vaughan["Digital Modeling (William Vaughan)"]:::mesh
+    qem["Surface Simplification Using Quadric Error Metrics (Michael Garland, Paul Heckbert)"]:::mesh
+    marching["Marching Cubes (William Lorensen, Harvey Cline)"]:::mesh
+    edelsbrunner["Geometry and Topology for Mesh Generation (Herbert Edelsbrunner)"]:::mesh
+    shewchuk["What Is a Good Linear Finite Element? (Jonathan Shewchuk)"]:::mesh
+  end
+  subgraph RENDER["Surface, Material and Light: PBR and Rendering"]
+    kajiya["The Rendering Equation (James Kajiya)"]:::render
+    cookTorrance["A Reflectance Model for Computer Graphics (Robert Cook, Kenneth Torrance)"]:::render
+    burley["Physically-Based Shading at Disney (Brent Burley)"]:::render
+    pharr["Physically Based Rendering: From Theory to Implementation (Matt Pharr, Wenzel Jakob, Greg Humphreys)"]:::render
+    birn["Digital Lighting and Rendering (Jeremy Birn)"]:::render
+    gurney["Color and Light (James Gurney)"]:::render
+    catmullCI["Creativity, Inc. (Ed Catmull, Amy Wallace)"]:::render
+    illusion["The Illusion of Life: Disney Animation (Frank Thomas, Ollie Johnston)"]:::render
+  end
+  subgraph HUMAN["Scale, Body and Ergonomics"]
+    dreyfussDFP["Designing for People (Henry Dreyfuss)"]:::human
+    measureMan["The Measure of Man and Woman (Alvin R. Tilley, Henry Dreyfuss Associates)"]:::human
+    panero["Human Dimension and Interior Space (Julius Panero, Martin Zelnik)"]:::human
+    pheasant["Bodyspace (Stephen Pheasant, Christine M. Haslegrave)"]:::human
+    neufert["Architects' Data (Ernst Neufert)"]:::human
+    criadoPerez["Invisible Women (Caroline Criado Perez)"]:::human
+  end
+  subgraph MAKE["Making: Manufacturability, Tolerance, DFM"]
+    dfma["Product Design for Manufacture and Assembly (Geoffrey Boothroyd, Peter Dewhurst, Winston Knight)"]:::make
+    ashby["Materials Selection in Mechanical Design (Michael F. Ashby)"]:::make
+    ashbyJ["Materials and Design (Michael Ashby, Kara Johnson)"]:::make
+    thompsonR["Manufacturing Processes for Design Professionals (Rob Thompson)"]:::make
+    lefteri["Making It: Manufacturing Techniques for Product Design (Chris Lefteri)"]:::make
+    gibson["Additive Manufacturing Technologies (Ian Gibson, David Rosen, Brent Stucker)"]:::make
+    redwood["The 3D Printing Handbook (Ben Redwood, Filemon Schöffer, Brian Garret)"]:::make
+    dfam["ISO/ASTM 52910 Design for Additive Manufacturing (ISO, ASTM)"]:::make
+    asme["ASME Y14.5 Dimensioning and Tolerancing (ASME)"]:::make
+    iso2768["ISO 2768 General Tolerances (ISO)"]:::make
+    pye["The Nature and Art of Workmanship (David Pye)"]:::make
+  end
+  subgraph EXCHANGE["Exchange: Formats That Carry the Work Out"]
+    stepFmt["ISO 10303 STEP AP242 (ISO)"]:::exchange
+    stlFmt["StereoLithography Interface Specification (3D Systems)"]:::exchange
+    gltfFmt["glTF 2.0 Specification (Khronos Group)"]:::exchange
+    objFmt["Wavefront OBJ Format (Wavefront Technologies)"]:::exchange
+    threemfFmt["3MF Core Specification (3MF Consortium)"]:::exchange
+    usdFmt["Universal Scene Description (Pixar)"]:::exchange
+  end
+  subgraph CADMCP["Instruments: Unified CAD MCP (SolutionsAsService)"]
+    u_ctx["unified_get_context (Unified CAD MCP)"]:::instrument
+    u_scope["cad_get_scope (Unified CAD MCP)"]:::instrument
+    u_assets["cad_list_assets, cad_inspect_asset (Unified CAD MCP)"]:::instrument
+    u_stl["cad_inspect_stl_geometry, cad_get_stl_entities (Unified CAD MCP)"]:::instrument
+    u_brep["cad_inspect_freecad_model, cad_get_freecad_entities (Unified CAD MCP)"]:::instrument
+    u_dist["cad_measure_freecad_distance, cad_inspect_cad_envelopes (Unified CAD MCP)"]:::instrument
+    u_rev["cad_create_box_revision, cad_revise_box_parameters, cad_compare_box_revisions, cad_rollback_box_revision (Unified CAD MCP)"]:::instrument
+    u_prev["cad_preview_cad_revision, cad_inspect_cad_preview (Unified CAD MCP)"]:::instrument
+    u_rec["cad_create_project_snapshot, cad_create_project_record, cad_add_project_evidence, cad_add_project_requirement (Unified CAD MCP)"]:::instrument
+    u_qty["cad_convert_quantity (Unified CAD MCP)"]:::instrument
+    u_fc["freecad_connect_to_freecad, freecad_execute_python (Unified CAD MCP)"]:::instrument
+    u_fcx["freecad_* experimental sketch, pad, pocket, fillet, export helpers (Unified CAD MCP)"]:::instrument
+    u_air["airframe_build_fixed_wing, airframe_inspect_step, airframe_render_preview (Unified CAD MCP)"]:::instrument
+    u_kicad["kicad_* and pcb_* board-to-enclosure handoff (Unified CAD MCP)"]:::instrument
   end
   fft -->|debate context for| lookC
   fft -.->|reaffirmed by| pater
@@ -866,6 +980,178 @@ flowchart LR
   kandCSA -->|Autonomous mode: inner necessity is the governing criterion of| c_adr
   CRITICS -->|Autonomous mode: judge each move against| kandCSA
   argyris -->|double loop revises the Autonomous criterion in| kandCSA
+  lecorbusier -->|regulating lines lead to| modulor
+  elamGeo -->|proportion for| modulor
+  modulor -->|human-scaled proportion for| neufert
+  moholy -->|precedes| moholyNV
+  bauhaus -->|taught| moholyNV
+  moholyVM -->|extends| moholyNV
+  moholyNV -->|material to volume to space for| ching
+  hildebrand -->|problem of form for| readSculpt
+  readSculpt -->|history of the medium for| krauss
+  krauss -->|precedes| kraussField
+  kraussField -.->|expanded field answers the pedestal of| hildebrand
+  brancusi -->|reduction precedes| judd
+  judd -.->|specific objects refuse the composition of| hildebrand
+  krauss -->|reads the absorbed base of| brancusi
+  darcy -->|growth and form for| alexOrder
+  darcy -->|morphology as parameter for| woodbury
+  alexPattern -->|matures into| alexOrder
+  alexNotes -.->|fit between form and context, for| dfma
+  rasmussen -->|experience of mass for| pallasmaa
+  zumthor -.->|atmosphere answers the plan of| lecorbusier
+  venturi1 -.->|complexity answers the purism of| lecorbusier
+  pallasmaa -.->|haptic counterpoint to| ching
+  ching -->|massing hierarchy analogue of| vh
+  arnheim -->|perception of volume for| hildebrand
+  rams -.->|unobtrusive form tested against| brancusi
+  sullivan -->|function precedes form of| dreyfussDFP
+  farin -->|curves and surfaces precede| piegl
+  piegl -->|surface definition for| rhinoGuide
+  mortenson -->|survey of| requicha
+  requicha -->|rigid solid theory for| mantyla
+  mantyla -->|B-rep and Euler operators for| hoffmann
+  hoffmann -->|solid robustness for| shah
+  shah -->|feature trees for| woodbury
+  woodbury -->|parametric patterns for| tedeschi
+  alexPattern -->|patterns for| woodbury
+  gerstner -->|programme as parameter set for| woodbury
+  c_ssot -->|feature tree as single source of truth for| shah
+  c_refactor -->|reorder features without changing intent in| shah
+  catmullClark -->|subdivision surfaces for| vaughan
+  catmullClark -.->|subdivision limit approximates| piegl
+  piegl -.->|exact surface counterpoint to| botsch
+  marching -->|isosurface meshing for| botsch
+  edelsbrunner -->|topology for| shewchuk
+  shewchuk -->|element quality for| botsch
+  botsch -->|repair and remeshing for| qem
+  illusion -->|appeal and solid drawing for| vaughan
+  kajiya -->|rendering equation for| pharr
+  cookTorrance -->|microfacet reflectance for| burley
+  burley -->|principled materials for| gltfFmt
+  pharr -->|physically based light for| birn
+  gurney -->|color and light for| birn
+  itten -->|color contrast for| birn
+  albers -.->|perceived color counterpoint to| burley
+  tanizaki -.->|shadow counters the even key light of| birn
+  catmullCI -->|candor and the Braintrust for| CRITICS
+  catmullCI -->|story before polish for| illusion
+  dreyfussDFP -->|anthropometry for| measureMan
+  measureMan -->|data for| panero
+  panero -->|interior dimensions for| neufert
+  pheasant -->|bodyspace data for| panero
+  criadoPerez -.->|charges the reference man of| measureMan
+  criadoPerez -.->|charges the six-foot man of| modulor
+  mace -->|universal floor for| dreyfussDFP
+  holmes -->|exclusion mismatch for| pheasant
+  norman -->|affordances for| dreyfussDFP
+  dfma -->|part count and assembly for| thompsonR
+  ashby -->|material indices for| ashbyJ
+  ashbyJ -->|material character for| lefteri
+  lefteri -->|process survey with| thompsonR
+  gibson -->|additive processes for| redwood
+  dfam -->|additive design rules for| redwood
+  redwood -->|wall, overhang and clearance rules for| threemfFmt
+  asme -->|geometric tolerancing carried by| stepFmt
+  iso2768 -->|general tolerances complement| asme
+  pye -.->|workmanship of risk counters| dfma
+  sennett -->|craft for| pye
+  mcdonough -->|design for disassembly for| dfma
+  c_poka -->|assembly that cannot go wrong for| dfma
+  papanek -.->|questions the need for| dfma
+  mantyla -->|B-rep carried by| stepFmt
+  piegl -->|NURBS carried by| stepFmt
+  botsch -->|tessellation carried by| stlFmt
+  stlFmt -.->|carries no units, answered by| threemfFmt
+  qem -->|decimation for| gltfFmt
+  objFmt -.->|legacy mesh counterpoint to| gltfFmt
+  usdFmt -.->|scene composition rival to| gltfFmt
+  c_adr -->|form decision recorded for| lecorbusier
+  c_adr -->|feature-tree decision recorded for| shah
+  c_adr -->|topology decision recorded for| botsch
+  c_adr -->|material decision recorded for| burley
+  c_adr -->|scale decision recorded for| dreyfussDFP
+  c_adr -->|fabrication decision recorded for| dfma
+  c_adr -->|export decision recorded for| stepFmt
+  u_ctx -->|routes every call and reports backends for| u_scope
+  u_stl -->|measures manifoldness, shells and volume for| botsch
+  u_stl -->|measures the mesh carried by| stlFmt
+  u_brep -->|inspects the B-rep for| mantyla
+  u_brep -->|inspects the exchange file for| stepFmt
+  u_dist -->|measures clearance and wall for| dfma
+  u_dist -->|measures reach and clearance for| dreyfussDFP
+  u_rev -->|parametric revision for| shah
+  u_prev -->|renders the revision for| CRITICS
+  u_rec -->|records measured evidence for| c_adr
+  u_qty -->|converts units for| asme
+  u_assets -->|hashes the source for| u_rec
+  u_fc -->|scripted modeling for| woodbury
+  u_fc -->|exports the solid to| stepFmt
+  u_fcx -->|sketch, pad, pocket and fillet for| shah
+  u_air -->|parametric lofted build for| piegl
+  u_kicad -->|board envelope handoff for| u_brep
+  c_genchi -->|go and measure the geometry with| u_stl
+  c_spike -->|cheapest geometric test with| u_rev
+  c_goodhart -.->|a passing measurement is not a good form, warns| u_stl
+  u_stl -.->|a measured mesh does not prove the render, see| pharr
+  CRITICS -->|cite measured values from| u_stl
+  crit_good_rams -->|judges the object with| rams
+  crit_good_norman -->|judges use with| norman
+  crit_good_norman -->|judges feeling with| normanE
+  crit_living_alexander -->|judges living structure with| alexOrder
+  crit_living_alexander -->|judges fit with| alexNotes
+  crit_mass_corbusier -->|judges mass and plan with| lecorbusier
+  crit_mass_corbusier -->|judges proportion with| modulor
+  crit_vision_moholy -->|judges material to space with| moholyNV
+  crit_vision_moholy -->|judges motion with| moholyVM
+  crit_essence_brancusi -->|argues from the documented sculptures and sayings in| brancusi
+  crit_relief_hildebrand -->|judges relief and volume with| hildebrand
+  crit_field_krauss -->|reads the object with| krauss
+  crit_field_krauss -->|maps the field with| kraussField
+  crit_haptic_pallasmaa -->|judges touch and shadow with| pallasmaa
+  crit_make_boothroyd -->|counts parts and assembly with| dfma
+  crit_make_dewhurst -->|costs parts and assembly with| dfma
+  crit_make_boothroyd -->|checks process rules with| redwood
+  crit_make_dewhurst -->|checks process rules with| thompsonR
+  crit_matter_ashby -->|selects material with| ashby
+  crit_matter_ashby -->|reads material character with| ashbyJ
+  crit_work_pye -->|judges workmanship with| pye
+  crit_surf_piegl -->|checks continuity with| piegl
+  crit_surf_tiller -->|checks continuity with| piegl
+  crit_mesh_botsch -->|checks topology with| botsch
+  crit_mesh_botsch -->|checks element quality with| shewchuk
+  crit_light_pharr -->|checks light transport with| pharr
+  crit_light_pharr -->|checks materials with| burley
+  crit_story_catmull -->|asks for candor with| catmullCI
+  crit_story_catmull -->|checks the limit surface with| catmullClark
+  crit_body_dreyfuss -->|checks fit to the body with| dreyfussDFP
+  crit_body_dreyfuss -->|checks dimensions with| measureMan
+  crit_body_criado -->|asks whose body the data omits with| criadoPerez
+  crit_essence_brancusi -.->|essence refuses the part count of| crit_make_boothroyd
+  crit_make_boothroyd -.->|part count disciplines the gesture of| crit_essence_brancusi
+  crit_make_dewhurst -.->|cost per part tempers the purity of| crit_essence_brancusi
+  crit_work_pye -.->|workmanship of risk answers the certainty of| crit_make_boothroyd
+  crit_work_pye -.->|workmanship of risk answers the certainty of| crit_make_dewhurst
+  crit_mass_corbusier -.->|machine for living challenged by| crit_living_alexander
+  crit_living_alexander -.->|living structure refuses the regulating lines of| crit_mass_corbusier
+  crit_body_criado -.->|charges the average body of| crit_body_dreyfuss
+  crit_body_criado -.->|charges the six-foot man of| crit_mass_corbusier
+  crit_make_dewhurst -.->|demands a makeable part from| crit_story_catmull
+  crit_story_catmull -.->|demands appeal from| crit_make_dewhurst
+  crit_surf_piegl -.->|demands curvature continuity from| crit_mesh_botsch
+  crit_surf_tiller -.->|demands curvature continuity from| crit_mesh_botsch
+  crit_mesh_botsch -.->|demands a watertight tessellation from| crit_surf_piegl
+  crit_mesh_botsch -.->|demands a watertight tessellation from| crit_surf_tiller
+  crit_good_rams -.->|unobtrusive object challenged by| crit_dionys_venturi
+  crit_haptic_pallasmaa -.->|touch answers the retinal image of| crit_light_pharr
+  crit_light_pharr -.->|measured light answers the intuition of| crit_haptic_pallasmaa
+  crit_relief_hildebrand -.->|frontal relief challenged by| crit_field_krauss
+  crit_field_krauss -.->|reads the absorbed pedestal of| crit_essence_brancusi
+  crit_matter_ashby -.->|questions the material cost of| crit_essence_brancusi
+  crit_eco_mcdonough -.->|questions material cost of| crit_matter_ashby
+  crit_eco_braungart -.->|questions material cost of| crit_matter_ashby
+  crit_good_norman -.->|demands signifiers from| crit_essence_brancusi
+  crit_vision_moholy -.->|new vision challenged by the shadow of| crit_plur_tanizaki
   classDef stance fill:#fef3c7,stroke:#b45309,color:#111827
   classDef rules fill:#e5e7eb,stroke:#374151,color:#111827
   classDef break fill:#fce7f3,stroke:#be185d,color:#111827
@@ -880,6 +1166,14 @@ flowchart LR
   classDef panel fill:#cffafe,stroke:#0e7490,color:#111827
   classDef adapt fill:#ecfccb,stroke:#4d7c0f,color:#111827
   classDef autonomy fill:#fef9c3,stroke:#a16207,color:#111827
+  classDef form fill:#f5f5f4,stroke:#57534e,color:#111827
+  classDef solid fill:#e0f2fe,stroke:#0369a1,color:#111827
+  classDef mesh fill:#f0fdf4,stroke:#166534,color:#111827
+  classDef render fill:#fff7ed,stroke:#9a3412,color:#111827
+  classDef human fill:#fdf2f8,stroke:#9d174d,color:#111827
+  classDef make fill:#f1f5f9,stroke:#334155,stroke-width:2px,color:#111827
+  classDef exchange fill:#eef2ff,stroke:#4338ca,color:#111827
+  classDef instrument fill:#ecfeff,stroke:#155e75,stroke-dasharray:2,color:#111827
   classDef kept fill:#bbf7d0,stroke:#15803d,color:#111827
   classDef adapted fill:#fde68a,stroke:#b45309,color:#111827
   classDef scrapped fill:#fecaca,stroke:#b91c1c,stroke-dasharray:4,color:#111827
@@ -888,8 +1182,19 @@ flowchart LR
 
 One seat per authority. A required critic named in the workflow for two or
 three thinkers is that many seats: "Critic: Apollonian Order (Wölfflin,
-Gombrich)" is `crit_apollo_wolfflin` and `crit_apollo_gombrich`. 52 seats,
-50 authorities — Shklovsky sits in Provocateur and in Rupture, Pater in
-Aestheticist and in Musical Structure — and 48 texts, because Positioning is
-Ries and Trout together and Cradle to Cradle is McDonough and Braungart
-together.
+Gombrich)" is `crit_apollo_wolfflin` and `crit_apollo_gombrich`. DADA's
+graphic-design roster is 52 seats, 50 authorities — Shklovsky sits in
+Provocateur and in Rupture, Pater in Aestheticist and in Musical Structure —
+and 48 texts, because Positioning is Ries and Trout together and Cradle to
+Cradle is McDonough and Braungart together.
+
+3dada adds 20 seats for three dimensions, one authority each and none already
+seated, so the roster is 72 seats, 70 authorities and 66 texts: Boothroyd and
+Dewhurst argue from one book (Product Design for Manufacture and Assembly), and
+Piegl and Tiller from another (The NURBS Book). Brancusi wrote no treatise; his
+seat argues from the sculptures and recorded sayings documented in Sidney
+Geist's catalogue, and a verdict from it names a sculpture by title. Seats that
+argue about whom the record omits: 2 of 52 in the 2D roster (Miller, Walters),
+3 of 72 with the 3D seats (Criado Perez, on the bodies anthropometric data
+leaves out). The CADMCP cluster holds instruments, not authorities: its nodes
+ground measurements and never sit on the panel.
