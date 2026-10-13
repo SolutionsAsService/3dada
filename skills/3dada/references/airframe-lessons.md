@@ -19,6 +19,17 @@ in a real run (HALRO 2.3, 2026-10-13) and says what to check, not what to believ
 - Mirror checks compare two independent tessellations; tolerance is 0.1 × the mass-mesh deflection. A failure above that is real.
 - Battery, gimbal and nose gear are the CG levers; move them before resizing tubes. Re-run analysis after every mass change.
 
+## Shape vocabulary (unified-CAD-MCP, 2026-10-13)
+- `wing.stations[].z_mm`: lifts a station above the dihedral line (gull wing, upswept outer panel). Spars and servos must follow it.
+- `wing.root_fairing.stations`: a thicker, longer-chord loft from inside the fuselage to a wing station, fused into the wing.
+  Make its outer station slightly smaller than the wing section there so it is buried (coincident faces make fragile booleans).
+- `wing.tip_fin` {cant_deg, stations}: upturned tip / winglet parts (`<name> · port/starboard`), trimmed by the wing.
+  The analysis does not count them as tail area; treat their stability as unclaimed margin and add their drag as `extra_drag`.
+- Launch case: `performance_inputs.launch` {accel_g, end_speed_m_s, max_stroke_m, mounts[]} → checks for end speed / stall,
+  catapult stroke and every mount's ultimate margin. Catapult designs need it.
+- Swept wings: pass the VLM neutral point back as `neutral_point_crosscheck`; the closed form must agree within 5 % MAC and
+  the margin must also hold with the VLM point.
+
 ## Process
 - Panel: one sub-agent per literary reference when a sub-agent tool exists. A single model writing critics in turn is
   "not independent" and must be recorded as a compliance gap, not hidden.
