@@ -25,10 +25,11 @@ KNOWN_TOOLS = {
     *("freecad_" + n for n in """connect_to_freecad execute_python new_document create_body
         create_sketch add_sketch_rectangle add_sketch_circle close_sketch pad pocket fillet chamfer
         export_stl export_step get_objects get_shape_info""".split()),
-    *("airframe_" + n for n in "build_fixed_wing inspect_step render_preview aero_crosscheck vspaero_analysis".split()),
+    *("airframe_" + n for n in "build_fixed_wing inspect_step render_preview aero_crosscheck vspaero_analysis flotation_check".split()),
     "kicad_export", "kicad_design", "kicad_get_usage_guidance",
     "drone_rf_antenna_layout_check",  # unified-CAD-MCP e8856bc
     "enclosure_module_catalog", "enclosure_fit_check", "enclosure_button_stack",
+    "enclosure_oring_gland",  # unified-CAD-MCP d1a66b6
 }
 TOOL_NAME = re.compile(r"\b(?:unified|cad|freecad|airframe|kicad|pcb|drone)_[a-z_]*[a-z]\b(?!\.py)")
 NOT_TOOLS = {"unified_cad_mcp", "drone_tools"}  # package and config key, not tools

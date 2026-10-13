@@ -54,3 +54,12 @@ in a real run (HALRO 2.3, 2026-10-13) and says what to check, not what to believ
   "not independent" and must be recorded as a compliance gap, not hidden.
 - S3 needs two consecutive WHOLE rounds with no change. One closing round is a gap.
 - Final-state re-measurement (2g / S6) covers every exported file, and figures in the README must come from report files.
+
+## Waterproof / floating multirotors (unified-CAD-MCP d1a66b6)
+- Export the SEALED volumes only (hull, float columns, sealed arms) as closed, coarse STLs and run airframe_flotation_check with
+  the CAD mass and CG. Require: reserve buoyancy >= 50 %, prop discs >= 40 mm above the waterline, vents/seams/camera window above
+  it, positive GM in roll and pitch and a range of positive stability >= 45 deg. Low CG + wide floats beat a single deep hull.
+- Size every seal with enclosure_oring_gland (squeeze 15-30 %, fill <= 85 %, screw pitch <= 10 x flange). Printed seal faces
+  leak: machine, epoxy-coat or smooth them; ship an immersion / pressure-decay test as an exit gate, never claim IP67 from CAD.
+- Hydrostatics are static: state that waves, downwash, spray and flooding are unmodelled and plan a tank test.
+
