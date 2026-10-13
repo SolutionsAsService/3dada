@@ -230,4 +230,4 @@ Solid arrows are forward references (grounds, extends, applies). Dotted arrows a
 
 ## Anchor graph
 
-Read [references/anchor-graph.md](references/anchor-graph.md) before choosing the seed and the panel. It contains the complete source graph, including all labels, edges and status classes. Copy labels from it exactly. Read [references/cad-mcp.md](references/cad-mcp.md) before Step 0.
+Read [references/anchor-graph.md](references/anchor-graph.md) before choosing the seed and the panel. It contains the complete source graph, including all labels, edges and status classes. Copy labels from it exactly. Read [references/cad-mcp.md](references/cad-mcp.md) before Step 0, and [references/airframe-lessons.md](references/airframe-lessons.md) before any fixed-wing or drone job.

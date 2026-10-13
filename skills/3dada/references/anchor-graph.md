@@ -435,6 +435,7 @@ flowchart LR
     u_scope["cad_get_scope (Unified CAD MCP)"]:::instrument
     u_assets["cad_list_assets, cad_inspect_asset (Unified CAD MCP)"]:::instrument
     u_stl["cad_inspect_stl_geometry, cad_get_stl_entities (Unified CAD MCP)"]:::instrument
+    g_boolorder["Robust Boolean Order (Hoffmann, Geometric and Solid Modeling)"]:::solid
     u_brep["cad_inspect_freecad_model, cad_get_freecad_entities (Unified CAD MCP)"]:::instrument
     u_dist["cad_measure_freecad_distance, cad_inspect_cad_envelopes (Unified CAD MCP)"]:::instrument
     u_rev["cad_create_box_revision, cad_revise_box_parameters, cad_compare_box_revisions, cad_rollback_box_revision (Unified CAD MCP)"]:::instrument
@@ -479,6 +480,8 @@ flowchart LR
   c_aida -->|attention arc for| bierut
   bantjes -.->|ornament answers| rams
   c_genchi -->|go and see first-hand for| sideways
+  g_boolorder -->|re-measure the export before trusting a one-sided boolean result with| u_stl
+  g_boolorder -.->|a 0 % result on one mirrored side is a boolean fault, not geometry, until re-measured| c_genchi
   c_first -->|essence method for| hara
   gestalt -->|grounds| arnheim
   kandinsky -->|informs| dondis
