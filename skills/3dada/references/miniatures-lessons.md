@@ -43,3 +43,30 @@ read inside `airframe.output_root` / `read_roots`.
 - `Shape.BoundBox` is loose on BSpline faces (control points). Measure contact heights with
   `optimalBoundingBox(True, False)` or a mesh before placing a socket or a stand.
 - Every printed part must be one valid solid; assert it in the generator and check the assembly for interference.
+- Importing `Part` before `FreeCAD` in a headless freecad-python script segfaults with no traceback: import FreeCAD (or a
+  helper that does) first.
+- `removeSplitter()` can throw "Bnd_Box is void" on a valid many-face fuse (a coin-heaped chest); fall back to the
+  unsplit solid after checking `isValid()` and the solid count.
+
+## Fantasy terrain and scatter (wizard tower, village well, chest and barrels, hooded wanderer)
+- Openings in a round wall: cut jambs and heads radially (splayed toward the axis). Parallel-sided cuts meet the curved
+  wall at an angle and leave knife-edge slivers that `miniature_printability_check` reports as thin walls.
+- Decorative grooves must stop short of other edges. Stone courses crossing a door or window head, plank grooves run out
+  to a round rim, and stone-joint slots touching course grooves all left 0.1-0.4 mm slivers. Skip a sector round each
+  opening (half-angle + 4 deg), stop plank grooves 1.5 mm inside the rim, keep joint slots clear of the courses.
+- FDM upright parts: use 45 deg V-grooves for courses (self-supporting), 45 deg corbels under inward ledges, and a 45 deg
+  eave underside on roofs. On a cone, model shingles as overlapping drip edges with a steep underside instead of cutting
+  grooves: grooves on a sloped surface voxelised as small enclosed voids.
+- Suction cups are vat-film physics: for FDM pass a large `max_cup_area_mm2` and say why; for resin, fill or vent
+  every cup (a coin hoard heaped above the chest rim, a brim-full bucket, a drain throat from the well water to the
+  vented magnet pocket).
+- The ray-cast thin-wall and spike numbers move with tessellation: long sliver triangles on a 32 mm bore read as 0.7 mm
+  "spikes" at one deflection and vanished at another. Do not tune the mesh until it passes; find the feature the
+  thin spots point at (map print-pose coordinates back to the model) and fix the geometry, then re-check.
+- Modular buildings: storeys seat on a half-lap lip with a key gap and a matching tooth (one way on, no glue); drop-in
+  floors rest on the lip's inner ledge so they print flat without bridging and lift out. Check storey height, door,
+  slip gap, lip engagement and hatch with `miniature_floor_clearance_check`.
+- Before modelling: `miniature_detail_advice` for what to exaggerate at the scale, `miniature_base_catalog` for the base,
+  `miniature_terrain_grid_check` for footprints and magnets on a 1 in / 25 mm grid. After: `miniature_hollow_plan` for
+  big resin parts, `miniature_split_plan` when a part outgrows the printer, `miniature_plate_pack` for the print batch.
+
