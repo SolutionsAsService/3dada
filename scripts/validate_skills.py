@@ -33,6 +33,7 @@ KNOWN_TOOLS = {
     *("miniature_" + n for n in "scale_convert printability_check base_and_peg support_plan".split()),  # miniature namespace
     *("miniature_" + n for n in ("terrain_grid_check detail_advice hollow_plan split_plan base_catalog floor_clearance_check "
                                  "plate_pack").split()),  # miniature_more.py
+    "miniature_base_layout_check",  # miniature_scene.py
 }
 TOOL_NAME = re.compile(r"\b(?:unified|cad|freecad|airframe|kicad|pcb|drone|enclosure|miniature)_[a-z_]*[a-z]\b(?!\.py)")
 NOT_TOOLS = {"unified_cad_mcp", "drone_tools"}  # package and config key, not tools

@@ -69,4 +69,11 @@ read inside `airframe.output_root` / `read_roots`.
 - Before modelling: `miniature_detail_advice` for what to exaggerate at the scale, `miniature_base_catalog` for the base,
   `miniature_terrain_grid_check` for footprints and magnets on a 1 in / 25 mm grid. After: `miniature_hollow_plan` for
   big resin parts, `miniature_split_plan` when a part outgrows the printer, `miniature_plate_pack` for the print batch.
+- Scene bases (figure + anvil, figure + scatter on one base): lay out footprints, D-flat sockets and the magnet pocket with
+  `miniature_base_layout_check` before sculpting. The thin wall is between two holes (socket over the pocket, socket at
+  the rim), which no outer-skin check sees until the STL exists; on the dwarf blacksmith the pocket moved off-centre to
+  clear both sockets.
+- Organic figures as signed-distance sculpts (smooth-union primitives + displacement for hair, mail, leather, flagstones)
+  mesh to 0.6-1.2 M triangles at a 0.1 mm grid; the pure-Python `miniature_*` checks are O(triangles), so QEM-decimate
+  the print STL to ~200 k faces (re-assert closed/manifold) before checking, and check the file you will slice.
 
