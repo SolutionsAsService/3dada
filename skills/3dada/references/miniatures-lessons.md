@@ -74,6 +74,22 @@ read inside `airframe.output_root` / `read_roots`.
   the rim), which no outer-skin check sees until the STL exists; on the dwarf blacksmith the pocket moved off-centre to
   clear both sockets.
 - Organic figures as signed-distance sculpts (smooth-union primitives + displacement for hair, mail, leather, flagstones)
-  mesh to 0.6-1.2 M triangles at a 0.1 mm grid; the pure-Python `miniature_*` checks are O(triangles), so QEM-decimate
-  the print STL to ~200 k faces (re-assert closed/manifold) before checking, and check the file you will slice.
+  mesh to 0.6-1.6 M triangles at a 0.1 mm grid, but the pure-Python `miniature_*` checks refuse > 300 k. **Do not
+  QEM-decimate the marched mesh** (FreeCAD `Mesh.decimate` and similar): on the dwarf blacksmith and the dire wolf it
+  folded and pinched the surface (6-15 non-manifold edges, self-intersections), and the printability check then reported
+  14-31 mm2 of fake 0 mm walls. Instead **re-mesh the field coarser**: triangles scale with 1 / pitch^2, so
+  `miniature_mesh_budget` (current triangles + pitch -> pitch for ~250 k) gives the grid; 0.2-0.24 mm is plenty for a
+  28 mm figure and keeps every 0.9 mm+ feature at 4+ voxels. Decimation is only for viewer / STEP previews, never for the
+  file you slice and check.
+- Marching a smooth-union SDF leaves **speck shells and inside-out bubbles** just under the skin (0.0001-0.08 mm3). The
+  printability check reads them as enclosed voids and as 0 mm walls (the inward ray hits the bubble). Drop every shell
+  under 0.05 mm3 and every negative-volume shell before export (fantasy-miniatures `tools/sculptkit.drop_specks`), and
+  confirm with `miniature_shell_audit` (clean = true).
+- Thin sheets (apron hems, beard tips, ears) under 0.4 mm: grow them in the field (SDF offset 0.1-0.2 mm, widen sockets
+  by the same amount), not by scaling the mesh. Gaps between parts that should stay apart (blade on anvil) must open by
+  twice the offset.
+- Scene bases print flat only if nothing opens toward the vat: sockets and magnet pockets on a flat-printed base are
+  suction cups. Vent every pocket through the rim for its full depth, or let `miniature_support_plan` tilt the base.
+- One heavy job at a time on small machines: run sculpt builds and checks through a shared slot (`cadslot`), commit each
+  figure the moment it passes (or push it marked "not yet passing" with its report) so a crash loses nothing.
 
