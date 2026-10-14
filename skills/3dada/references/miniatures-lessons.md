@@ -107,3 +107,19 @@ read inside `airframe.output_root` / `read_roots`.
   engraved strands; a smooth hair cap alone reads as a helmet. Elf ears: flattened leaf slabs >= 0.7 mm thick, 1.5 mm+ long.
 - Tufts add surface: budget triangles (`miniature_mesh_budget`) after fur, not before (the wolf went 0.24 -> 0.28 mm), and
   leave 3+ mm of grid margin past tail and mane tips or the mesher hits the border.
+
+## Parts libraries: helms, weapons, armour bits (2026-10-14)
+
+- Keep every reusable part in a **registry by identifier** (fantasy-miniatures `tools/armory.py`: FB bows, FW weapons,
+  FH helms; scifi-miniatures `tools/armory.py`: VH helms, VW weapons, VA armour). Each entry is a function drawing the
+  part in a documented local frame onto a sculpt grid through a transform (`Frame(origin, R)`), so **the same code** is a
+  loose print part and the thing a figure holds or wears. Figures pull from the library (the elf ranger's bow is FB-05)
+  instead of redrawing parts inline, and a fix to a part fixes every figure.
+- Publish each library as a **bits package** in the viewer (one part per item, named "<ID> <Name>", print STL slug
+  "<id>-<name>"), built by a shared builder (`tools/bitskit.py` / `tools/bitspack.py`): own grid per part, closed
+  manifold, no decimation, shells audited, renders + parts plan for check.py.
+- Helms swap by a common neck peg (sci-fi 1.6 mm D-flat; fantasy 1.4 mm round), so any helm fits any body of the line.
+- Bows: model as a centreline tube with sag (longbow), tip curl (recurve), grip set-back (reflex/horn), plus nocks and a
+  1.0 mm string on the chord; limbs >= 1.1 mm at the tips. Brace the lower tip on the base when a figure holds one.
+- Keep the original of a figure when reworking: publish the rework as a new id (vigil-rifleman-mk2), never overwrite a
+  version the owner liked.
