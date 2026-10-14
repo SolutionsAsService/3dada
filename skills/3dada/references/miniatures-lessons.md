@@ -93,3 +93,17 @@ read inside `airframe.output_root` / `read_roots`.
 - One heavy job at a time on small machines: run sculpt builds and checks through a shared slot (`cadslot`), commit each
   figure the moment it passes (or push it marked "not yet passing" with its report) so a crash loses nothing.
 
+## Fur, hair and feathers (dire wolf vs dire hyena, 2026-10-14)
+
+- **Engraved fur reads as spots.** The first dire wolf carried fur as rows of short engraved grooves; at arm's length they
+  read as pits, and the owner renamed the figure "Dire Hyena". Fur, manes, feathers and shaggy tails must be **raised,
+  layered tufts** that overlap like shingles, following a flow field (back and down on the flanks, back and up on a mane,
+  down the backs of the legs, along a tail to a flame-shaped tip).
+- Tuft recipe (fantasy-miniatures `tools/bestiary.fur_tufts`): flattened round cone (slab) rooted ~0.35 mm under the
+  skin, 2-3 mm long, lifted 10-15 deg, >= 0.75 mm thick and >= 0.8 mm wide at the point printed, smooth union k ~0.25 so
+  the wedge under each tip fills instead of trapping resin or failing `miniature_gap_check`. Place every tuft on the
+  surface first (ray-cast), add them after, so tufts don't shift each other.
+- Long hair on humanoids: big locks as curve tubes over the shoulders plus a hair mass down the back, with a few 0.6 mm
+  engraved strands; a smooth hair cap alone reads as a helmet. Elf ears: flattened leaf slabs >= 0.7 mm thick, 1.5 mm+ long.
+- Tufts add surface: budget triangles (`miniature_mesh_budget`) after fur, not before (the wolf went 0.24 -> 0.28 mm), and
+  leave 3+ mm of grid margin past tail and mane tips or the mesher hits the border.
