@@ -72,5 +72,5 @@ in a real run (HALRO 2.3, 2026-10-13) and says what to check, not what to believ
   170 → 230 mm in-world moved vertical tail volume 0.014 → 0.023 (pass).
 - Launcher rail length is a sizing output: launch stroke from drone_fixed_wing_analysis (2.45 m at 12 g to 24 m/s) set
   a 2.6 m-class rail (46.4 mm at 1:56).
-- drone_propulsion_estimate caps prop diameter at 80 in: a helicopter main rotor beyond 2 m must be sized by hand
+- The drone_* multirotor hover-propulsion calculator caps prop diameter at 80 in: a helicopter main rotor beyond 2 m must be sized by hand
   (record the method) until the tool takes a rotor diameter.
