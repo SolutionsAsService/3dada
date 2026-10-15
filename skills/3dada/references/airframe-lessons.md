@@ -63,3 +63,14 @@ in a real run (HALRO 2.3, 2026-10-13) and says what to check, not what to believ
   leak: machine, epoxy-coat or smooth them; ship an immersion / pressure-decay test as an exit gate, never claim IP67 from CAD.
 - Hydrostatics are static: state that waves, downwash, spray and flooding are unmodelled and plan a tank test.
 
+
+
+## Lessons from the Vigil aerial wing (2026-10-14)
+
+- A flying wing's "tails" for drone_fixed_wing_analysis are its winglets (role vertical); the tool still demands a tail
+  and fails horizontal tail volume for a tailless aircraft: judge stability by static margin. Enlarging winglets
+  170 → 230 mm in-world moved vertical tail volume 0.014 → 0.023 (pass).
+- Launcher rail length is a sizing output: launch stroke from drone_fixed_wing_analysis (2.45 m at 12 g to 24 m/s) set
+  a 2.6 m-class rail (46.4 mm at 1:56).
+- drone_propulsion_estimate caps prop diameter at 80 in: a helicopter main rotor beyond 2 m must be sized by hand
+  (record the method) until the tool takes a rotor diameter.

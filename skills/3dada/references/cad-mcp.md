@@ -60,3 +60,13 @@ Typical starting values only, to be replaced by the machine, material or vendor 
 ## Boundaries (from the Unified CAD MCP documentation)
 
 Configuration is trusted executable configuration. The project root is shared context, not a sandbox. `freecad_execute_python` is unrestricted code in the live FreeCAD GUI; it is disabled by default and should be enabled deliberately for a run that authors geometry. No cross-backend transaction, live synchronization, manufacturing certification or engineering approval is provided: 3dada's panel judges, the measurement informs, and neither is a certificate.
+
+
+## Host notes (OpenClaw code mode, 2026-10-14)
+
+- The MCP namespace in OpenClaw code mode exposes camelCase names (unifiedGetContext, cadGetScope,
+  cadInspectStlGeometry), not the snake_case ids written in this skill; map them, do not assume a tool is missing.
+- Long builds: use a background exec and poll a log with short sleeps; setsid/nohup from a short exec was killed.
+- The live server's miniature_* tools can read package STLs only from configured read roots; package check.py scripts
+  run the tools in-process (PYTHONPATH=<unified-CAD-MCP>/src). Record which path produced each measurement.
+- trimesh.proximity.signed_distance on 250k-triangle meshes is the memory spike to avoid on a shared host.

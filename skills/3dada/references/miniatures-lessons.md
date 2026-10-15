@@ -123,3 +123,38 @@ read inside `airframe.output_root` / `read_roots`.
   1.0 mm string on the chord; limbs >= 1.1 mm at the tips. Brace the lower tip on the base when a figure holds one.
 - Keep the original of a figure when reworking: publish the rework as a new id (vigil-rifleman-mk2), never overwrite a
   version the owner liked.
+
+
+## Vehicles, drones and multi-agent builds (2026-10-14, scifi-miniatures: Wayfarer APC, Lantern drones, aerial wing)
+
+- **Re-check after every subtractive fix.** On the Wayfarer, widening the stern door left a 37 mm² sliver of the
+  sloped stern panel over the opening (< 0.4 mm), turning a passing hull into a fail. A cut that intersects a sloped
+  panel needs its top cut deeper than its bottom (or the panel trimmed back to a 0.6 mm land). Never write "re-checked"
+  in the log until the check ran on the final geometry.
+- **Size the real machine first, then scale.** Run drone_* calculators on a 1:1 spec (rotor disc, disc loading, CG,
+  static margin) before sculpting; put the flight-stem socket on the computed CG and fail check.py on drift.
+- **Rotor blades print flat as separate parts with a through-bore hub** (never a blind hole on the plate side: it is a
+  sealed cup). 0.9 mm blades with a flat underside need no supports.
+- **One socket size per interface family** (stem 1.6 round in 1.8; belly hardpoint 1.6 D-flat; mast 1.2 D-flat; vehicle
+  roof accessory 2.0 D-flat), pegs on the bit, sockets on the host, so a bit cannot go in the wrong hole.
+- **Loadouts need three clearances**: no overlap with the host, lowest point above the skid plane plus margin, and no
+  overlap with the flight stem. Write pylons as centre = -half so their top is z = 0 by construction (a 0.1 mm poke
+  measured 1.9 mm³ of interference).
+- **Probe a host you may not edit at <= half its narrowest engraved feature.** 4 mm and 1 mm grids read the Wayfarer
+  roof as flat and missed 0.5 mm louvre slots; a 0.25 mm grid found them. Seat bits on a glue pad over a verified flat strip.
+- **Choose base-deck pitch from the triangle budget** (triangles ~ 1/pitch²): a 50 mm base at 0.12 mm was 710k tris,
+  at 0.2 mm 265k with 0.45 mm seams still > 2 voxels.
+- **Engrave curved skins with "region AND within depth of the surface" cuts before later adds**, so later adds are never nicked.
+- **True 1:56 vehicles vs 30 mm heroic troopers:** a standing heroic Vigilant does not fit a true-scale troop bay
+  (24.2 mm internal height = 1.36 m). Measure fit per figure (crouched, lying, through hatch) and give the owner the
+  choice of a compressed heroic vehicle scale instead of silently enlarging.
+- **Heroic bits fail 'minimum wall (supported)' from engraved detail**: helms and guns with 0.25-0.35 mm engraved panel
+  lines and vent slots measured 4-15 mm² of sub-0.4 mm wall (min ~0.002 mm) at slot floors and lips. Size engraving
+  depth against the local wall and keep >= 0.4 mm lands; check every part of a bits library, not a sample.
+
+## Running several builds at once (orchestration)
+
+- **One critic subagent per panel seat × several parallel builds crashed the host gateway** (≈19 workers, memory
+  pressure, all runs lost mid-round). On a shared 8 GB host: at most ~3 concurrent builds, convene each panel round
+  as ONE subagent playing all seats (<= 4 seats), one heavy python job at a time globally, and commit after every
+  passing milestone so a crash loses nothing. Keep tool output short (tail/grep, never whole meshes or JSON).
