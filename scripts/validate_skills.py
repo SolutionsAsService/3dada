@@ -28,6 +28,7 @@ KNOWN_TOOLS = {
     *("airframe_" + n for n in "build_fixed_wing inspect_step render_preview aero_crosscheck vspaero_analysis flotation_check".split()),
     "kicad_export", "kicad_design", "kicad_get_usage_guidance",
     "drone_rf_antenna_layout_check",  # unified-CAD-MCP e8856bc
+    "drone_fixed_wing_analysis",  # unified-CAD-MCP main (fixed_wing.py)
     "enclosure_module_catalog", "enclosure_fit_check", "enclosure_button_stack",
     "enclosure_oring_gland",  # unified-CAD-MCP d1a66b6
     *("miniature_" + n for n in "scale_convert printability_check base_and_peg support_plan".split()),  # miniature namespace
