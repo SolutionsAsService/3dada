@@ -158,3 +158,32 @@ read inside `airframe.output_root` / `read_roots`.
   pressure, all runs lost mid-round). On a shared 8 GB host: at most ~3 concurrent builds, convene each panel round
   as ONE subagent playing all seats (<= 4 seats), one heavy python job at a time globally, and commit after every
   passing milestone so a crash loses nothing. Keep tool output short (tail/grep, never whole meshes or JSON).
+- **Correction (2026-10-14, 2nd and 3rd crashes): on 8 GB the limit is ~2 builds, and the gateway is what dies.** Two
+  parallel opus build agents OOM-killed the gateway at a 3.9 GB peak even with every mesh job capped, because each
+  agent's transcript (renders, logs, JSON) lives in the gateway heap. Caps on child processes do not protect it.
+  Rules that held: max 2 build agents; no subagents inside a build; cap every heavy step with
+  `systemd-run --user --scope -p MemoryMax=1500M -p MemorySwapMax=0 nice -n 10 ...` and OMP_NUM_THREADS=2; wait
+  while `free -m` available < 2000 MB; view at most one image per milestone; never cat logs/JSON (tail/grep).
+- **Make the checker cached and resumable** (key results by tool + args + STL sha256 in build/checkcache) so a killed
+  run resumes instead of restarting; iterate with a local twin of the MCP check (~30 s/part) and certify with the MCP
+  tools (~2 min/part).
+- **Budget triangles before checking**: ~160k for figures/bits, ~250k for bases. Every part at ~245k made the checker
+  take ~5 min each regardless of size. Probe at 2x pitch first (triangles ~ 1/pitch²) instead of meshing fine and
+  re-meshing: the fine-first path hit 540k triangles and was OOM-killed under 1.5 GB.
+- **Render in a separate process from saved STLs, decimated only for the render** (about 40k/part); rendering in the
+  build process after fits was OOM-killed.
+- **One pusher per working tree.** Several agents and the orchestrator pushing the same branch at once stack up slow
+  uploads and fail with "cannot lock ref ... is at <sha>" (which means another push already landed it). Push once
+  with a timeout, then verify with `git ls-remote`.
+
+## Resin engraving and fusing (Lantern drones build 3, 2026-10-14)
+
+- **Engrave with 90° V-grooves, never box slots.** The two parallel walls of a 0.40–0.45 mm box slot count as a sub-0.5 mm
+  gap; the walls of a V never do (base deck gap area dropped from 57–87 mm² to 0). Keep the cutter's height above the
+  skin ≤ 0.3 mm, and stop the conical end ≥ 0.6 mm short of neighbouring bodies (it widens above the skin).
+- **Near-tangent bodies need a web, not a nudge**: a filler web turning bar, arm and duct into one cowl took the gap from 2.06 mm² to 0.
+- **Never step one body onto another by 0–0.5 mm**: either fuse it (sink ≥ 0.45 mm with a ≥ 0.4 mm blend) or clear it by
+  more than 0.6 mm (cradle gap 47.7 → 0.2 mm²). Root pylons inboard, away from rims.
+- **A raked socket needs a pad sized for its plan shadow** (a 24°, 3.2 mm-deep bore needed pad radius 3.0, not 2.4).
+- **Sealed voids from grooves under overhangs**: track-shoe grooves under a sponson marched to 22 bodies (sealed
+  0.7 mm³ shells). Audit shells after every engraving pass.
